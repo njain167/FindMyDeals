@@ -13,7 +13,7 @@
             --brand-light: #fff6d1;
             --text-primary: #2c3e50;
             --text-secondary: #5d6d7e;
-            --background: #f8f9fa;
+            --background: #fffaf0;
             --white: #FFFFFF;
             --border: #e9ecef;
             --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
@@ -33,6 +33,7 @@
             font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
+            background: var(--background);
         }
                 /* Add these font styles after the body selector */
         h1, h2, h3, .logo-text {
@@ -112,31 +113,39 @@
         section {
             padding: 4rem 2rem;
             scroll-margin-top: 5rem;
+            position: relative;
+            background: linear-gradient(135deg, var(--white) 0%, var(--brand-light) 30%);
+        }
+
+        section:nth-child(even) {
+            background: linear-gradient(135deg, var(--white) 0%, var(--brand-light) 30%);
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
         }
 
         .section-title h2 {
             font-size: 2.8rem;
             font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
         }
 
         .section-title p {
             color: var(--text-secondary);
             font-size: 1.2rem;
             max-width: 600px;
-            margin: 1rem auto;
+            margin: 0 auto;
         }
 
         /* Hero section styles */
         .hero {
+            background: linear-gradient(135deg, var(--white) 0%, var(--brand-light) 30%);
             padding: 8rem 2rem 6rem;
-            background: linear-gradient(135deg, var(--brand-light) 0%, var(--white) 100%);
             position: relative;
             overflow: hidden;
         }
@@ -301,62 +310,43 @@
 
         /* Features section styles */
         .features-grid {
-            max-width: 1100px;
-            margin: 2rem auto 0;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-            padding: 0 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .feature-card {
             background: var(--white);
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2.25rem;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
-            transition: var(--transition);
-            box-shadow: var(--shadow-sm);
+            align-items: flex-start;
+            text-align: left;
         }
 
-        .feature-icon {
-            width: 4rem;
-            height: 4rem;
-            background: var(--brand-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: var(--brand-primary);
-            margin-bottom: 1.5rem;
-            transition: var(--transition);
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--brand-primary-light) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1);
-            background: var(--brand-primary-light);
-            color: var(--white);
+        .feature-card:hover::before {
+            opacity: 0.1;
         }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-
-        .feature-card p {
-            font-size: 1.05rem;
-            line-height: 1.6;
-            color: var(--text-secondary);
-            margin: 0;
-        }
-       
 
         .feature-card:hover {
             transform: translateY(-5px);
@@ -364,7 +354,53 @@
             border-color: var(--brand-primary);
         }
 
-       
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: var(--brand-primary-light);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            background: var(--brand-primary);
+            color: var(--white);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .feature-details {
+            margin-top: auto;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .feature-tag {
+            background: var(--brand-primary-light);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
         /* Pricing section styles */
         .pricing-container {
             max-width: 900px;
@@ -431,40 +467,6 @@
             color: var(--brand-primary);
             position: absolute;
             left: 0;
-        }
-
-        /* Contact form styles */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            font-family: inherit;
-        }
-
-        .form-group textarea {
-            height: 150px;
-            resize: vertical;
         }
 
         /* Button styles */
@@ -581,8 +583,9 @@
 
         /* Add new testimonials section styles */
         .testimonials {
-            background: linear-gradient(135deg, var(--brand-light) 0%, var(--white) 100%);
-            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--white) 0%, var(--brand-light) 30%);
+            padding: 6rem 2rem;
+            position: relative;
         }
 
         .testimonials-grid {
@@ -695,7 +698,7 @@
 
         /* Enhanced Features Section */
         .features {
-            background: var(--white);
+            background: linear-gradient(135deg, var(--white) 0%, var(--brand-light) 30%);
             position: relative;
             overflow: hidden;
         }
@@ -771,7 +774,7 @@
 
         /* Enhanced Pricing Section */
         .pricing {
-            background: linear-gradient(135deg, var(--brand-light) 0%, var(--white) 100%);
+            background: linear-gradient(135deg, var(--white) 0%, var(--brand-light) 30%);
             position: relative;
             overflow: hidden;
         }
@@ -854,7 +857,8 @@
 
         /* Enhanced Testimonials Section */
         .testimonials {
-            background: var(--white);
+            background: linear-gradient(135deg, var(--white) 0%, var(--brand-light) 30%);
+            padding: 6rem 2rem;
             position: relative;
             overflow: hidden;
         }
@@ -866,12 +870,17 @@
             left: 0;
             right: 0;
             height: 100%;
-            background: linear-gradient(135deg, var(--brand-light) 0%, transparent 100%);
+            background: linear-gradient(135deg, var(--brand-primary-light) 0%, transparent 100%);
             opacity: 0.5;
             z-index: 0;
         }
 
         .testimonials-grid {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             position: relative;
             z-index: 1;
         }
@@ -881,7 +890,7 @@
             padding: 2.5rem;
             border-radius: 16px;
             box-shadow: var(--shadow-sm);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
             border: 1px solid var(--border);
@@ -896,7 +905,7 @@
             height: 100%;
             background: linear-gradient(135deg, var(--brand-primary-light) 0%, transparent 100%);
             opacity: 0;
-            transition: opacity 0.4s ease;
+            transition: opacity 0.3s ease;
         }
 
         .testimonial-card:hover::before {
@@ -921,6 +930,12 @@
             margin-right: 1.5rem;
             object-fit: cover;
             border: 3px solid var(--brand-primary-light);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover .testimonial-avatar {
+            border-color: var(--brand-primary);
+            transform: scale(1.05);
         }
 
         .testimonial-author {
@@ -954,6 +969,216 @@
             color: var(--brand-primary-light);
             font-family: Georgia, serif;
             line-height: 1;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials {
+                padding: 4rem 1rem;
+            }
+
+            .testimonials-grid {
+                gap: 1.5rem;
+            }
+
+            .testimonial-card {
+                padding: 2rem;
+            }
+
+            .testimonial-avatar {
+                width: 50px;
+                height: 50px;
+            }
+
+            .testimonial-author {
+                font-size: 1.1rem;
+            }
+
+            .testimonial-content {
+                font-size: 1rem;
+                padding-left: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .testimonials {
+                padding: 3rem 0.5rem;
+            }
+
+            .testimonials-grid {
+                gap: 1rem;
+            }
+
+            .testimonial-card {
+                padding: 1.5rem;
+            }
+
+            .testimonial-avatar {
+                width: 45px;
+                height: 45px;
+                margin-right: 1rem;
+            }
+
+            .testimonial-author {
+                font-size: 1rem;
+            }
+
+            .testimonial-role {
+                font-size: 0.9rem;
+            }
+
+            .testimonial-content {
+                font-size: 0.95rem;
+                padding-left: 1.25rem;
+            }
+        }
+
+        /* How to Use Section Styles */
+        .how-to-use {
+            background: linear-gradient(135deg, var(--white) 0%, var(--brand-light) 30%);
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .steps-container {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--brand-primary);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--brand-primary);
+            color: var(--white);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .step-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: var(--brand-primary-light);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover .step-icon {
+            transform: scale(1.1);
+            background: var(--brand-primary);
+            color: var(--white);
+        }
+
+        .step-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .step-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .step-details {
+            margin-top: auto;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .step-tag {
+            background: var(--brand-primary-light);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .how-to-use {
+                padding: 4rem 1rem;
+            }
+
+            .steps-container {
+                gap: 1.5rem;
+            }
+
+            .step-card {
+                padding: 2rem;
+            }
+
+            .step-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+            }
+
+            .step-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .step-tag {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .how-to-use {
+                padding: 3rem 0.5rem;
+            }
+
+            .steps-container {
+                gap: 1rem;
+            }
+
+            .step-card {
+                padding: 1.5rem;
+            }
+
+            .step-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -1022,17 +1247,30 @@
             <div class="feature-card">
                 <div class="feature-icon">🔍</div>
                 <h3>Smart Deal Detection</h3>
-                <p>Our AI-powered system scans thousands of deals in real-time to find the best matches for you</p>
+                <p>Our AI-powered system scans thousands of deals in real-time to find the best matches for you. Get personalized recommendations based on your shopping history.</p>
+                <div class="feature-details">
+                    <span class="feature-tag">AI-Powered</span>
+                    <span class="feature-tag">Real-time</span>
+                </div>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🔒</div>
-                <h3>Local Storage</h3>
-                <p>Your data stays private with local storage. No cloud uploads, no data sharing - just secure, offline access.</p>
+                <h3>Privacy First</h3>
+                <p>Your data stays private with local storage. No cloud uploads, no data sharing - just secure, offline access to your deals and preferences.</p>
+                <div class="feature-details">
+                    <span class="feature-tag">Local Storage</span>
+                    <span class="feature-tag">Secure</span>
+                </div>
             </div>
+        
             <div class="feature-card">
-                <div class="feature-icon">🔍</div>
-                <h3>Quick Search</h3>
-                <p>Find any deal instantly with our powerful search feature. Filter by store, category, or expiry date.</p>
+                <div class="feature-icon">🔔</div>
+                <h3>Smart Notifications</h3>
+                <p>Get instant alerts for new deals, price drops, and expiring offers. Never miss a saving opportunity again.</p>
+                <div class="feature-details">
+                    <span class="feature-tag">Instant Alerts</span>
+                    <span class="feature-tag">Customizable</span>
+                </div>
             </div>
         </div>
     </section>
@@ -1070,26 +1308,41 @@
         </div>
     </section>
 
-    <section id="how-to-use">
+    <section id="how-to-use" class="how-to-use">
         <div class="section-title">
             <h2>How to Use FindMyDeals</h2>
             <p>Get started in three simple steps</p>
         </div>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">1️⃣</div>
+        <div class="steps-container">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="step-icon">📥</div>
                 <h3>Install Extension</h3>
-                <p>Add FindMyDeals to Chrome with just one click. No account creation required.</p>
+                <p>Add FindMyDeals to Chrome with just one click. No account creation required - we respect your privacy.</p>
+                <div class="step-details">
+                    <span class="step-tag">Quick Setup</span>
+                    <span class="step-tag">No Account Needed</span>
+                </div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">2️⃣</div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="step-icon">🔐</div>
                 <h3>Grant Access</h3>
-                <p>Allow the extension to scan your inbox for deals and vouchers. We never store your emails.</p>
+                <p>Allow the extension to scan your inbox for deals and vouchers. Your emails stay private - we never store them.</p>
+                <div class="step-details">
+                    <span class="step-tag">Privacy First</span>
+                    <span class="step-tag">Local Processing</span>
+                </div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">3️⃣</div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="step-icon">💫</div>
                 <h3>Start Saving</h3>
-                <p>Watch as deals automatically appear in your dashboard. Click to use them anytime!</p>
+                <p>Watch as deals automatically appear in your dashboard. Click to use them anytime, anywhere!</p>
+                <div class="step-details">
+                    <span class="step-tag">Instant Access</span>
+                    <span class="step-tag">Always Ready</span>
+                </div>
             </div>
         </div>
     </section>
@@ -1102,7 +1355,7 @@
         <div class="testimonials-grid">
             <div class="testimonial-card">
                 <div class="testimonial-header">
-                    <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Sarah Johnson" class="testimonial-avatar">
+                    <img src="sarah.jpg" alt="Sarah Johnson" class="testimonial-avatar">
                     <div class="testimonial-info">
                         <h4 class="testimonial-author">Sarah Johnson</h4>
                         <p class="testimonial-role">Frequent Shopper</p>
@@ -1112,7 +1365,7 @@
             </div>
             <div class="testimonial-card">
                 <div class="testimonial-header">
-                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Michael Chen" class="testimonial-avatar">
+                    <img src="michael.jpg" alt="Michael Chen" class="testimonial-avatar">
                     <div class="testimonial-info">
                         <h4 class="testimonial-author">Michael Chen</h4>
                         <p class="testimonial-role">Tech Enthusiast</p>
@@ -1122,7 +1375,7 @@
             </div>
             <div class="testimonial-card">
                 <div class="testimonial-header">
-                    <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Emily Rodriguez" class="testimonial-avatar">
+                    <img src="emily.jpg" alt="Emily Rodriguez" class="testimonial-avatar">
                     <div class="testimonial-info">
                         <h4 class="testimonial-author">Emily Rodriguez</h4>
                         <p class="testimonial-role">Small Business Owner</p>
