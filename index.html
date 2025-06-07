@@ -6,20 +6,35 @@
     <title>FindMyDeals - Never Miss a Deal Again</title>
     <style>
         :root {
-            --brand-primary: #ff7f6b;
-            --brand-primary-light: #ffa99b;
-            --brand-primary-dark: #e65d47;
-            --brand-secondary: #ffd580;
-            --brand-light: #fff6d1;
-            --text-primary: #2c3e50;
-            --text-secondary: #5d6d7e;
-            --background: #fffaf0;
-            --white: #FFFFFF;
-            --border: #e9ecef;
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
-            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
-            --transition: all 0.3s ease;
+            --brand-primary: #4384F3;
+            --brand-primary-light: #5A94F4;
+            --brand-primary-dark: #2D74F2;
+            --brand-secondary: #0f172a;
+            --brand-secondary-light: #334155;
+            --brand-accent: #FF6348;
+            --brand-yellow: #FFD580;
+            --brand-light: #f1f5f9;
+            --background: #ffffff;
+            --background-secondary: #f8fafc;
+            --background-tertiary: #f1f5f9;
+            --header-bg: #ffffff;
+            --header-border: #e2e8f0;
+            --header-accent: #f1f5f9;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --border-light: #f1f5f9;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
         }
 
         * {
@@ -30,14 +45,16 @@
         }
 
         body {
-            font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif;
+            font-family: 'Century Gothic', Avenir, 'Trebuchet MS', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
             background: var(--background);
+            margin: 0;
+            padding: 0;
         }
                 /* Add these font styles after the body selector */
         h1, h2, h3, .logo-text {
-            font-family: 'Clash Display', 'Plus Jakarta Sans', 'SF Pro Display', system-ui, sans-serif;
+            font-family: 'Century Gothic', Avenir, 'Trebuchet MS', -apple-system, BlinkMacSystemFont, sans-serif;
             font-weight: 600;
             letter-spacing: -0.02em;
             line-height: 1.2;
@@ -46,25 +63,20 @@
         .section-title h2 {
             font-size: 3.2rem;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--brand-primary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text-primary);
         }
 
         .hero h1 {
             font-size: 4rem;
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--brand-primary-light) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text-primary);
         }
         /* Header styles remain the same */
         header {
-            background: var(--white);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
             position: fixed;
             width: 100%;
             top: 0;
@@ -74,7 +86,7 @@
         .header-content {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem;
+            padding: 0.75rem 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -87,14 +99,14 @@
         }
 
         .logo-container img {
-            width: 32px;
-            height: 32px;
+            width: 50px;
+            height: 50px;
         }
 
         .logo-text {
             font-size: 1.5rem;
             font-weight: bold;
-            color: var(--brand-primary);
+            color: var(--brand-accent);
             text-decoration: none;
         }
 
@@ -114,11 +126,11 @@
             padding: 4rem 2rem;
             scroll-margin-top: 5rem;
             position: relative;
-            background: linear-gradient(135deg, var(--white) 0%, var(--brand-light) 30%);
+            background: var(--white);
         }
 
         section:nth-child(even) {
-            background: linear-gradient(135deg, var(--white) 0%, var(--brand-light) 30%);
+            background: var(--background);
         }
 
         .section-title {
@@ -144,7 +156,7 @@
 
         /* Hero section styles */
         .hero {
-            background: linear-gradient(135deg, var(--white) 0%, var(--brand-light) 30%);
+            background: linear-gradient(135deg, var(--background) 0%, var(--background-secondary) 100%);
             padding: 8rem 2rem 6rem;
             position: relative;
             overflow: hidden;
@@ -157,8 +169,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="%23ff7f6b" opacity="0.1"/></svg>');
-            opacity: 0.5;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 213, 128, 0.15) 0%, transparent 50%);
+            opacity: 0.6;
         }
 
         .hero-content {
@@ -180,10 +192,7 @@
             font-size: 4.5rem;
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--brand-primary-light) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text-primary);
         }
 
         .hero p {
@@ -203,28 +212,53 @@
         .button.primary {
             background: var(--brand-primary);
             color: var(--white);
-            padding: 1rem 2rem;
-            border-radius: 8px;
+            padding: 0.875rem 2rem;
+            border-radius: var(--radius-lg);
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition);
             box-shadow: var(--shadow-sm);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
         .button.secondary {
             background: var(--white);
             color: var(--brand-primary);
             border: 2px solid var(--brand-primary);
-            padding: 1rem 2rem;
-            border-radius: 8px;
+            padding: 0.875rem 2rem;
+            border-radius: var(--radius-lg);
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition);
+            cursor: pointer;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 12px rgba(67, 132, 243, 0.15);
+            position: relative;
+            overflow: hidden;
         }
 
-        .button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+        .button.primary:hover {
+            background: var(--brand-primary-dark);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .button.secondary:hover {
+            background: var(--brand-primary);
+            color: var(--white);
+            border-color: var(--brand-primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(67, 132, 243, 0.3);
         }
 
         .hero-stats {
@@ -242,7 +276,7 @@
         .stat-number {
             font-size: 2rem;
             font-weight: 700;
-            color: var(--brand-primary);
+            color: var(--brand-accent);
             margin-bottom: 0.5rem;
         }
 
@@ -253,35 +287,16 @@
 
         .hero-image {
             position: relative;
-            animation: float 6s ease-in-out infinite;
         }
 
         .hero-image img {
             max-width: 100%;
-            border-radius: 12px;
-            box-shadow: var(--shadow-lg);
             transition: var(--transition);
         }
 
-        .hero-image::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-            background: var(--brand-primary);
-            filter: blur(40px);
-            opacity: 0.2;
-            z-index: -1;
-        }
 
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
+
+
 
         @keyframes fadeInUp {
             from {
@@ -339,7 +354,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, var(--brand-primary-light) 0%, transparent 100%);
+            background: linear-gradient(135deg, var(--brand-yellow) 0%, transparent 100%);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -357,7 +372,7 @@
         .feature-icon {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
-            background: var(--brand-primary-light);
+            background: var(--brand-yellow);
             width: 70px;
             height: 70px;
             border-radius: 50%;
@@ -365,12 +380,14 @@
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
+            border: 2px solid var(--brand-yellow);
         }
 
         .feature-card:hover .feature-icon {
             transform: scale(1.1);
-            background: var(--brand-primary);
+            background: var(--brand-accent);
             color: var(--white);
+            border-color: var(--brand-accent);
         }
 
         .feature-card h3 {
@@ -393,12 +410,15 @@
         }
 
         .feature-tag {
-            background: var(--brand-primary-light);
-            color: var(--white);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
+            background: var(--brand-yellow);
+            color: var(--text-primary);
+            padding: 0.375rem 0.875rem;
+            border-radius: var(--radius-xl);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+            border: 1px solid var(--brand-yellow);
         }
 
         /* Pricing section styles */
@@ -427,10 +447,11 @@
             position: absolute;
             top: 1rem;
             right: -2rem;
-            background: var(--brand-primary);
+            background: var(--brand-accent);
             color: var(--white);
             padding: 0.5rem 3rem;
             transform: rotate(45deg);
+            font-weight: 600;
         }
 
         .pricing-card h3 {
@@ -441,7 +462,7 @@
 
         .price {
             font-size: 3rem;
-            color: var(--brand-primary);
+            color: var(--brand-accent);
             margin: 1rem 0;
         }
 
@@ -464,7 +485,7 @@
 
         .features-list li::before {
             content: "✓";
-            color: var(--brand-primary);
+            color: var(--brand-accent);
             position: absolute;
             left: 0;
         }
@@ -491,9 +512,7 @@
             background: var(--brand-primary-dark);
         }
 
-        .button.secondary {
-            background: var(--text-secondary);
-        }
+
         /* Add these new styles */
         .hero-buttons {
             margin-top: 2rem;
@@ -556,8 +575,12 @@
         }
 
         footer a {
-            color: var(--brand-secondary);
+            color: var(--white);
             text-decoration: none;
+        }
+        
+        footer a:hover {
+            color: var(--brand-primary-light);
         }
 
         /* Responsive styles */
@@ -583,7 +606,7 @@
 
         /* Add new testimonials section styles */
         .testimonials {
-            background: linear-gradient(135deg, var(--white) 0%, var(--brand-light) 30%);
+            background: linear-gradient(135deg, var(--white) 0%, rgba(255, 213, 128, 0.2) 30%);
             padding: 6rem 2rem;
             position: relative;
         }
@@ -698,21 +721,10 @@
 
         /* Enhanced Features Section */
         .features {
-            background: linear-gradient(135deg, var(--white) 0%, var(--brand-light) 30%);
+            background: linear-gradient(135deg, var(--white) 0%, rgba(255, 213, 128, 0.18) 30%);
             position: relative;
             overflow: hidden;
-        }
-
-        .features::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            background: linear-gradient(135deg, var(--brand-light) 0%, transparent 100%);
-            opacity: 0.5;
-            z-index: 0;
+            padding: 6rem 2rem;
         }
 
         .features-grid {
@@ -723,15 +735,16 @@
         .feature-card {
             background: var(--white);
             border: 1px solid var(--border);
-            border-radius: 16px;
+            border-radius: var(--radius-xl);
             padding: 2.5rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: var(--transition);
             position: relative;
             overflow: hidden;
+            box-shadow: var(--shadow-sm);
         }
 
         .feature-card::before {
@@ -741,42 +754,29 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, var(--brand-primary-light) 0%, transparent 100%);
+            background: linear-gradient(135deg, var(--brand-primary) 0%, transparent 100%);
             opacity: 0;
-            transition: opacity 0.4s ease;
+            transition: opacity 0.3s ease;
         }
 
         .feature-card:hover::before {
-            opacity: 0.1;
+            opacity: 0.03;
         }
 
-        .feature-icon {
-            width: 5rem;
-            height: 5rem;
-            background: var(--brand-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            color: var(--brand-primary);
-            margin-bottom: 1.5rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            z-index: 1;
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--brand-primary-light);
         }
 
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1) rotate(5deg);
-            background: var(--brand-primary);
-            color: var(--white);
-        }
+
 
         /* Enhanced Pricing Section */
         .pricing {
-            background: linear-gradient(135deg, var(--white) 0%, var(--brand-light) 30%);
+            background: linear-gradient(135deg, var(--white) 0%, rgba(255, 213, 128, 0.18) 30%);
             position: relative;
             overflow: hidden;
+            padding: 6rem 2rem;
         }
 
         .pricing-container {
@@ -798,7 +798,7 @@
         }
 
         .pricing-card.popular {
-            border: 2px solid var(--brand-primary);
+            border: 2px solid var(--brand-accent);
             transform: scale(1.05);
         }
 
@@ -807,7 +807,7 @@
             position: absolute;
             top: 1rem;
             right: -2rem;
-            background: var(--brand-primary);
+            background: var(--brand-accent);
             color: var(--white);
             padding: 0.5rem 3rem;
             transform: rotate(45deg);
@@ -819,7 +819,7 @@
         .price {
             font-size: 3.5rem;
             font-weight: 700;
-            color: var(--brand-primary);
+            color: var(--brand-accent);
             margin: 1.5rem 0;
             display: flex;
             align-items: baseline;
@@ -849,7 +849,7 @@
 
         .features-list li::before {
             content: "✓";
-            color: var(--brand-primary);
+            color: var(--brand-accent);
             position: absolute;
             left: 0;
             font-weight: bold;
@@ -1034,7 +1034,7 @@
 
         /* How to Use Section Styles */
         .how-to-use {
-            background: linear-gradient(135deg, var(--white) 0%, var(--brand-light) 30%);
+            background: linear-gradient(135deg, var(--white) 0%, rgba(255, 213, 128, 0.18) 30%);
             padding: 6rem 2rem;
             position: relative;
         }
@@ -1072,8 +1072,8 @@
             position: absolute;
             top: -15px;
             left: 20px;
-            background: var(--brand-primary);
-            color: var(--white);
+            background: var(--brand-yellow);
+            color: var(--text-primary);
             width: 30px;
             height: 30px;
             border-radius: 50%;
@@ -1083,12 +1083,13 @@
             font-weight: bold;
             font-size: 1.2rem;
             box-shadow: var(--shadow-sm);
+            border: 2px solid var(--brand-yellow);
         }
 
         .step-icon {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
-            background: var(--brand-primary-light);
+            background: var(--brand-yellow);
             width: 70px;
             height: 70px;
             border-radius: 50%;
@@ -1096,12 +1097,14 @@
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
+            border: 2px solid var(--brand-yellow);
         }
 
         .step-card:hover .step-icon {
             transform: scale(1.1);
-            background: var(--brand-primary);
+            background: var(--brand-accent);
             color: var(--white);
+            border-color: var(--brand-accent);
         }
 
         .step-card h3 {
@@ -1124,12 +1127,13 @@
         }
 
         .step-tag {
-            background: var(--brand-primary-light);
-            color: var(--white);
+            background: var(--brand-yellow);
+            color: var(--text-primary);
             padding: 0.5rem 1rem;
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 500;
+            border: 1px solid var(--brand-yellow);
         }
 
         @media (max-width: 768px) {
@@ -1190,14 +1194,13 @@
     <header>
         <div class="header-content">
             <div class="logo-container">
-                <img src="voucher.png" alt="FindMyDeals Logo">
+                <img src="voucher.png" alt="FindMyDeals Logo" width="48" height="48">
                 <a href="/" class="logo-text">FindMyDeals</a>
             </div>
             <nav>
                 <a href="#features">Features</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#testimonials">Testimonials</a>
-                <a href="contact.html">Contact</a>
             </nav>
         </div>
     </header>
@@ -1233,7 +1236,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="product-screenshot.png" alt="FindMyDeals Interface" style="max-width: 100%; border-radius: 12px; box-shadow: var(--shadow-lg);">
+                <img src="product-screenshot.png" alt="FindMyDeals Interface">
             </div>
         </div>
     </section>
@@ -1245,31 +1248,31 @@
         </div>
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon">🔍</div>
-                <h3>Smart Deal Detection</h3>
-                <p>Our AI-powered system scans thousands of deals in real-time to find the best matches for you. Get personalized recommendations based on your shopping history.</p>
+                <div class="feature-icon">📧</div>
+                <h3>Automatic Email Scanning</h3>
+                <p>Automatically scans your Gmail promotional emails to extract deals, discounts, and vouchers. Our AI analyzes email content to identify savings opportunities you might have missed.</p>
                 <div class="feature-details">
+                    <span class="feature-tag">Gmail Integration</span>
                     <span class="feature-tag">AI-Powered</span>
-                    <span class="feature-tag">Real-time</span>
                 </div>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🔒</div>
-                <h3>Privacy First</h3>
-                <p>Your data stays private with local storage. No cloud uploads, no data sharing - just secure, offline access to your deals and preferences.</p>
+                <h3>Secure Deal Extraction</h3>
+                <p>Email content is securely processed through our API to extract deals and discounts. Extracted deals are stored locally on your device using IndexedDB for fast access.</p>
                 <div class="feature-details">
+                    <span class="feature-tag">Secure API</span>
                     <span class="feature-tag">Local Storage</span>
-                    <span class="feature-tag">Secure</span>
                 </div>
             </div>
         
             <div class="feature-card">
-                <div class="feature-icon">🔔</div>
-                <h3>Smart Notifications</h3>
-                <p>Get instant alerts for new deals, price drops, and expiring offers. Never miss a saving opportunity again.</p>
+                <div class="feature-icon">📊</div>
+                <h3>Organized Deal Dashboard</h3>
+                <p>View all your extracted deals in one organized interface. Access your vouchers and discounts anytime directly from Gmail or the extension popup.</p>
                 <div class="feature-details">
-                    <span class="feature-tag">Instant Alerts</span>
-                    <span class="feature-tag">Customizable</span>
+                    <span class="feature-tag">Easy Access</span>
+                    <span class="feature-tag">Organized</span>
                 </div>
             </div>
         </div>
@@ -1278,32 +1281,31 @@
     <section id="pricing" class="pricing">
         <div class="section-title">
             <h2>Simple, Transparent Pricing</h2>
-            <p>Choose the plan that works best for you</p>
+            <p>Try it free, then unlock unlimited access</p>
         </div>
         <div class="pricing-container">
             <div class="pricing-card">
-                <h3>Free</h3>
-                <div class="price">$0<span>/month</span></div>
+                <h3>Free Trial</h3>
+                <div class="price">$0<span>/always</span></div>
                 <ul class="features-list">
-                    <li>Basic deal tracking</li>
-                    <li>Up to 5 saved searches</li>
-                    <li>Email notifications</li>
-                    <li>Community support</li>
+                    <li>2 free email scans</li>
+                    <li>Experience full AI deal extraction</li>
+                    <li>See how many deals you have</li>
+                    <li>No credit card required</li>
                 </ul>
-                <a href="#" class="button">Get Started</a>
+                <a href="#" class="button">Start Free</a>
             </div>
             <div class="pricing-card popular">
-                <h3>Pro</h3>
-                <div class="price">$9.99<span>/month</span></div>
+                <h3>Unlimited Access</h3>
+                <div class="price">$19.99<span>/one-time</span></div>
                 <ul class="features-list">
-                    <li>Unlimited deal tracking</li>
-                    <li>Unlimited saved searches</li>
-                    <li>Priority notifications</li>
-                    <li>Price history tracking</li>
-                    <li>Personalized recommendations</li>
-                    <li>Priority support</li>
+                    <li>Unlimited email scanning</li>
+                    <li>All deals from your email history</li>
+                    <li>Automatic daily deal discovery</li>
+                    <li>Lifetime access to your deals</li>
+                    <li>Local storage for privacy</li>
                 </ul>
-                <a href="#" class="button primary">Start Free Trial</a>
+                <a href="#" class="button primary">Unlock Full Access</a>
             </div>
         </div>
     </section>
@@ -1355,33 +1357,33 @@
         <div class="testimonials-grid">
             <div class="testimonial-card">
                 <div class="testimonial-header">
-                    <img src="sarah.jpg" alt="Sarah Johnson" class="testimonial-avatar">
+                    <img src="sarah.jpg" alt="Jessica Martinez" class="testimonial-avatar">
                     <div class="testimonial-info">
-                        <h4 class="testimonial-author">Sarah Johnson</h4>
-                        <p class="testimonial-role">Frequent Shopper</p>
+                        <h4 class="testimonial-author">Jessica Martinez</h4>
+                        <p class="testimonial-role">Busy Mom</p>
                     </div>
                 </div>
-                <p class="testimonial-content">Find My Deals has completely transformed how I shop online. I've saved over $500 in just three months, and the personalized recommendations are spot on!</p>
+                <p class="testimonial-content">I had no idea how many deals were hiding in my Gmail! FindMyDeals found 47 vouchers I completely forgot about, including a $25 Target gift card that was about to expire.</p>
             </div>
             <div class="testimonial-card">
                 <div class="testimonial-header">
-                    <img src="michael.jpg" alt="Michael Chen" class="testimonial-avatar">
+                    <img src="michael.jpg" alt="David Thompson" class="testimonial-avatar">
                     <div class="testimonial-info">
-                        <h4 class="testimonial-author">Michael Chen</h4>
-                        <p class="testimonial-role">Tech Enthusiast</p>
+                        <h4 class="testimonial-author">David Thompson</h4>
+                        <p class="testimonial-role">College Student</p>
                     </div>
                 </div>
-                <p class="testimonial-content">The price history tracking feature is a game-changer. I always know when it's the best time to buy, and the instant notifications have helped me snag some incredible deals.</p>
+                <p class="testimonial-content">The extension scanned my promotional emails and found deals from stores I shop at but totally forgot about. Saved $80 on textbooks with a coupon that was sitting in my inbox for weeks!</p>
             </div>
             <div class="testimonial-card">
                 <div class="testimonial-header">
-                    <img src="emily.jpg" alt="Emily Rodriguez" class="testimonial-avatar">
+                    <img src="emily.jpg" alt="Rachel Kim" class="testimonial-avatar">
                     <div class="testimonial-info">
-                        <h4 class="testimonial-author">Emily Rodriguez</h4>
-                        <p class="testimonial-role">Small Business Owner</p>
+                        <h4 class="testimonial-author">Rachel Kim</h4>
+                        <p class="testimonial-role">Online Shopper</p>
                     </div>
                 </div>
-                <p class="testimonial-content">As a small business owner, finding the best deals on supplies is crucial. Find My Deals has helped me save thousands on inventory while ensuring I never miss out on important sales.</p>
+                <p class="testimonial-content">I love how it works right in Gmail! The AI found 30+ deals from my email history in seconds. Now I check my deal dashboard before making any purchase. Such a time-saver!</p>
             </div>
         </div>
     </section>
@@ -1398,9 +1400,9 @@
                 <a href="terms.html">Terms of Service</a>
             </div>
             <div class="footer-section">
-                <h4>Contact</h4>
-                <a href="contact.html">Contact Us</a>
-                <a href="mailto:support@findmydeals.com">support@findmydeals.ai</a>
+                <h4>Support</h4>
+                <a href="support.html">Support Center</a>
+                <a href="mailto:support@findmydeals.ai">support@findmydeals.ai</a>
             </div>
         </div>
         <div class="footer-bottom">

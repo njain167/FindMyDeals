@@ -6,20 +6,35 @@
     <title>Privacy Policy - FindMyDeals</title>
     <style>
         :root {
-            --brand-primary: #ff7f6b;
-            --brand-primary-light: #ffa99b;
-            --brand-primary-dark: #e65d47;
-            --brand-secondary: #ffd580;
-            --brand-light: #fff6d1;
-            --text-primary: #2c3e50;
-            --text-secondary: #5d6d7e;
-            --background: #f8f9fa;
-            --white: #FFFFFF;
-            --border: #e9ecef;
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
-            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
-            --transition: all 0.3s ease;
+            --brand-primary: #4384F3;
+            --brand-primary-light: #5A94F4;
+            --brand-primary-dark: #2D74F2;
+            --brand-secondary: #0f172a;
+            --brand-secondary-light: #334155;
+            --brand-accent: #FF6348;
+            --brand-yellow: #FFD580;
+            --brand-light: #f1f5f9;
+            --background: #ffffff;
+            --background-secondary: #f8fafc;
+            --background-tertiary: #f1f5f9;
+            --header-bg: #ffffff;
+            --header-border: #e2e8f0;
+            --header-accent: #f1f5f9;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --border-light: #f1f5f9;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
         }
 
         * {
@@ -29,15 +44,18 @@
         }
 
         body {
-            font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif;
+            font-family: 'Century Gothic', Avenir, 'Trebuchet MS', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
             background: var(--background);
+            margin: 0;
+            padding: 0;
         }
 
         header {
-            background: var(--white);
-            box-shadow: var(--shadow-sm);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
             position: fixed;
             width: 100%;
             top: 0;
@@ -47,7 +65,7 @@
         .header-content {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem;
+            padding: 0.75rem 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -60,23 +78,22 @@
         }
 
         .logo-container img {
-            width: 32px;
-            height: 32px;
+            width: 50px;
+            height: 50px;
         }
 
         .logo-text {
             font-size: 1.5rem;
             font-weight: bold;
-            color: var(--brand-primary);
+            color: var(--brand-accent);
             text-decoration: none;
-            font-family: 'Clash Display', 'Plus Jakarta Sans', 'SF Pro Display', system-ui, sans-serif;
         }
 
         nav a {
             margin-left: 1.5rem;
             text-decoration: none;
             color: var(--text-secondary);
-            transition: var(--transition);
+            transition: color 0.3s;
         }
 
         nav a:hover {
@@ -84,7 +101,7 @@
         }
 
         .legal-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 6rem auto 2rem;
             padding: 2rem;
             background: var(--white);
@@ -96,7 +113,10 @@
             font-size: 2.5rem;
             color: var(--text-primary);
             margin-bottom: 1rem;
-            font-family: 'Clash Display', 'Plus Jakarta Sans', 'SF Pro Display', system-ui, sans-serif;
+            font-family: 'Century Gothic', Avenir, 'Trebuchet MS', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
         }
 
         .last-updated {
@@ -113,7 +133,20 @@
             color: var(--brand-primary);
             margin-bottom: 1rem;
             font-size: 1.5rem;
-            font-family: 'Clash Display', 'Plus Jakarta Sans', 'SF Pro Display', system-ui, sans-serif;
+            font-family: 'Century Gothic', Avenir, 'Trebuchet MS', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .policy-section h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+            font-family: 'Century Gothic', Avenir, 'Trebuchet MS', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
         }
 
         .policy-section p {
@@ -150,6 +183,22 @@
             color: var(--brand-primary-dark);
         }
 
+        .highlight-box {
+            background: var(--brand-light);
+            border-left: 4px solid var(--brand-primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box strong {
+            color: var(--text-primary);
+        }
+
         footer {
             background: var(--text-primary);
             color: var(--white);
@@ -169,20 +218,27 @@
         }
 
         .footer-section h4 {
-            color: var(--brand-secondary);
+            color: var(--brand-yellow);
             margin-bottom: 1rem;
         }
 
         .footer-section a {
             display: block;
-            margin: 0.5rem 0;
-            color: var(--brand-secondary);
+            color: var(--white);
             text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--brand-accent);
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
         }
 
         @media (max-width: 768px) {
@@ -205,70 +261,326 @@
     <header>
         <div class="header-content">
             <div class="logo-container">
-                <img src="voucher.png" alt="FindMyDeals Logo">
-                <a href="/" class="logo-text">FindMyDeals</a>
+                <img src="voucher.png" alt="FindMyDeals Logo" width="48" height="48">
+                <a href="index.html" class="logo-text">FindMyDeals</a>
             </div>
             <nav>
-                <a href="/#features">Features</a>
-                <a href="/#pricing">Pricing</a>
-                <a href="/#how-to-use">How to Use</a>
-                <a href="/#contact">Contact</a>
+                <a href="index.html#features">Features</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#testimonials">Testimonials</a>
             </nav>
         </div>
     </header>
 
     <main class="legal-content">
-        <h1>Privacy Policy</h1>
-        <p class="last-updated">Last Updated: March 2024</p>
+        <h1>Privacy Policy for Find My Deals Chrome Extension</h1>
+        <p class="last-updated">Last Updated: [Current Date] | Effective Date: [Current Date]</p>
 
         <section class="policy-section">
-            <h2>Our Commitment to Privacy</h2>
-            <p>At FindMyDeals, privacy isn't just a policy - it's our foundation. We've built our service with your privacy as our top priority, ensuring your data remains under your control at all times.</p>
+            <h2>Overview</h2>
+            <p>Find My Deals ("we," "our," or "the Extension") is a Chrome browser extension that helps users discover and manage promotional deals from their email accounts. This Privacy Policy explains how we collect, use, share, and protect your personal information when you use our Extension.</p>
+            <p><strong>This Extension is designed with privacy first.</strong> We only collect data necessary to provide our core functionality and do not sell your personal information to third parties.</p>
         </section>
 
-        <section class="policy-section">
-            <h2>How FindMyDeals Works</h2>
+        <div class="highlight-box">
+            <h3>Quick Summary</h3>
             <ul>
-                <li><strong>Local Processing:</strong> All email scanning and deal detection happens directly on your device. Your emails never leave your browser.</li>
-                <li><strong>No Data Storage:</strong> We don't store your emails, login credentials, or personal information on our servers.</li>
-                <li><strong>No Third-Party Sharing:</strong> Since we don't collect your data, we have nothing to share with third parties.</li>
+                <li><strong>What we access:</strong> Gmail promotional emails from the past 3 months (maximum 200 emails per session)</li>
+                <li><strong>What we do:</strong> Process emails on Google Cloud to extract deals and offers to help you save money</li>
+                <li><strong>What we don't store:</strong> Your email content is never permanently stored on our servers</li>
+                <li><strong>What we don't do:</strong> Read your personal emails, sell your data, or access non-promotional content</li>
+                <li><strong>Your control:</strong> You can revoke access anytime through Google account settings</li>
+            </ul>
+        </div>
+
+        <section class="policy-section">
+            <h2>Information We Collect</h2>
+            
+            <h3>1. Gmail Data (Temporary Processing Only)</h3>
+            <div class="highlight-box">
+                <p><strong>IMPORTANT: We do not permanently store your email content.</strong> Email processing happens on Google Cloud for deal extraction only.</p>
+            </div>
+            
+            <p>When you grant permission, we temporarily process:</p>
+            <ul>
+                <li><strong>Email Content:</strong> Only promotional emails from your Gmail account (categorized under "Promotions") - processed temporarily, never stored permanently</li>
+                <li><strong>Email Metadata:</strong> Subject lines, sender information, dates, and message IDs - processed temporarily for deal extraction</li>
+                <li><strong>Gmail Profile Information:</strong> Your Gmail email address for account validation</li>
+                <li><strong>Processing History:</strong> Records of which emails have been processed to avoid duplication</li>
+            </ul>
+
+            <p><strong>Privacy Protection:</strong></p>
+            <ul>
+                <li>Your email content is never permanently stored on our servers</li>
+                <li>Email processing happens temporarily on Google Cloud for deal extraction only</li>
+                <li>Only the extracted deal information is retained, not your emails</li>
+                <li>We only access emails from the past 3 months</li>
+                <li>We limit processing to a maximum of 200 promotional emails per session</li>
+                <li>We cannot access your personal emails, drafts, or sent items</li>
+            </ul>
+
+            <h3>2. Google Account Information</h3>
+            <p>Through secure Google OAuth authentication:</p>
+            <ul>
+                <li><strong>Email Address:</strong> Your primary Google account email</li>
+                <li><strong>Basic Profile Information:</strong> Your name from Google (if provided)</li>
+                <li><strong>Authentication Tokens:</strong> Secure OAuth tokens for API access (automatically managed)</li>
+            </ul>
+
+            <h3>3. Browsing and Usage Data</h3>
+            <ul>
+                <li><strong>Website URLs:</strong> Sites you visit to identify relevant deals and display notifications</li>
+                <li><strong>Extension Usage:</strong> How you interact with Extension features (anonymized)</li>
+                <li><strong>Deal Preferences:</strong> Your interactions with deal notifications and settings</li>
+                <li><strong>Local Storage:</strong> Preferences and cached data stored locally in your browser</li>
+            </ul>
+
+            <h3>4. Payment Information (Premium Features Only)</h3>
+            <ul>
+                <li><strong>Stripe Payment Processing:</strong> Handled securely by Stripe (we do not store payment details)</li>
+                <li><strong>Subscription Status:</strong> Information about your plan and subscription</li>
+                <li><strong>Transaction Records:</strong> Payment dates and billing information (processed by Stripe)</li>
+            </ul>
+
+            <h3>5. Technical and Analytics Data</h3>
+            <ul>
+                <li><strong>Performance Data:</strong> Error logs and usage statistics (anonymized)</li>
+                <li><strong>Device Information:</strong> Browser type, extension version, and operating system</li>
+                <li><strong>Location Data:</strong> General location for deal relevance (can be disabled)</li>
             </ul>
         </section>
 
         <section class="policy-section">
-            <h2>Information We Don't Collect</h2>
+            <h2>How We Use Your Information</h2>
+            
+            <h3>1. Core Functionality</h3>
             <ul>
-                <li>Email contents or attachments</li>
-                <li>Login credentials</li>
-                <li>Personal identification information</li>
-                <li>Banking or financial information</li>
+                <li><strong>Deal Discovery:</strong> Temporarily process promotional emails on Google Cloud to identify deals, discounts, and offers</li>
+                <li><strong>Smart Categorization:</strong> Organize deals by type (Travel, Fashion, Electronics, etc.)</li>
+                <li><strong>Personalized Alerts:</strong> Show relevant deal notifications while browsing</li>
+                <li><strong>Deal Management:</strong> Store and organize your discovered deals locally and optionally in the cloud</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>Note:</strong> Emails are processed temporarily on Google Cloud for deal extraction. Only the extracted deal information (like "20% off at Store X") is retained - your actual email content is never permanently stored.</p>
+            </div>
+
+            <h3>2. Service Enhancement</h3>
+            <ul>
+                <li><strong>Performance Optimization:</strong> Improve Extension speed and accuracy</li>
+                <li><strong>Feature Development:</strong> Develop new features based on user needs</li>
+                <li><strong>User Support:</strong> Provide technical assistance and troubleshooting</li>
+                <li><strong>Quality Assurance:</strong> Ensure deals are accurate and up-to-date</li>
+            </ul>
+
+            <h3>3. Communication (Optional)</h3>
+            <ul>
+                <li><strong>Deal Summaries:</strong> Send email summaries of discovered deals (only if you opt-in)</li>
+                <li><strong>Service Updates:</strong> Notify about important Extension updates</li>
+                <li><strong>Support Communications:</strong> Respond to your inquiries</li>
             </ul>
         </section>
 
         <section class="policy-section">
-            <h2>Limited Information We Collect</h2>
-            <p>We collect minimal anonymous usage statistics to improve our service:</p>
+            <h2>Information Sharing and Disclosure</h2>
+            
+            <h3>1. Third-Party Services We Work With</h3>
+            <p><strong>Google Services:</strong></p>
             <ul>
-                <li>Extension installation and uninstallation events</li>
-                <li>Basic error reports</li>
-                <li>Anonymous feature usage statistics</li>
+                <li>Gmail API for email access (with your permission)</li>
+                <li>Google OAuth for secure authentication</li>
+                <li>Purpose: Core functionality and user authentication</li>
+            </ul>
+
+            <p><strong>Stripe:</strong></p>
+            <ul>
+                <li>Payment processing for premium features</li>
+                <li>We do not store your payment information</li>
+            </ul>
+
+            <p><strong>Our Backend Services:</strong></p>
+            <ul>
+                <li><strong>LLM API:</strong> Temporarily processes email content on Google Cloud to extract deal information (emails not permanently stored)</li>
+                <li><strong>Data API:</strong> Manages user accounts and deal storage</li>
+                <li><strong>Email API:</strong> Sends deal summary emails (if enabled)</li>
+                <li><strong>Payments API:</strong> Handles subscription management</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>Important:</strong> While email content is temporarily processed on Google Cloud for deal extraction, it is never permanently stored on our servers. Only the extracted deal information is retained.</p>
+            </div>
+
+            <h3>2. What We Don't Do</h3>
+            <ul>
+                <li><strong>No Permanent Email Storage:</strong> We never permanently store your email content on our servers</li>
+                <li><strong>No Data Sales:</strong> We never sell your personal information</li>
+                <li><strong>No Advertising:</strong> We don't use your data for targeted advertising</li>
+                <li><strong>No Unauthorized Sharing:</strong> We don't share data except as outlined above</li>
+                <li><strong>No Human Reading:</strong> Our team doesn't read your emails during processing (except for technical support when explicitly requested)</li>
+            </ul>
+
+            <h3>3. Legal Requirements</h3>
+            <p>We may disclose information if required by law, regulation, or legal process, or to protect rights, property, or safety.</p>
+        </section>
+
+        <section class="policy-section">
+            <h2>Data Security and Protection</h2>
+            
+            <h3>1. Processing and Security</h3>
+            <ul>
+                <li><strong>Secure Processing:</strong> Email processing happens on secure Google Cloud infrastructure</li>
+                <li><strong>Data in Transit:</strong> All data transmissions use HTTPS/TLS encryption</li>
+                <li><strong>Data at Rest:</strong> Deal data encrypted using industry-standard methods</li>
+                <li><strong>Temporary Processing:</strong> Email content processed temporarily for deal extraction, never permanently stored</li>
+            </ul>
+
+            <h3>2. Access Controls</h3>
+            <ul>
+                <li><strong>Authentication:</strong> Secure Google OAuth authentication</li>
+                <li><strong>Authorization:</strong> API access restricted to authenticated users only</li>
+                <li><strong>Minimal Access:</strong> We only access data necessary for functionality</li>
+            </ul>
+
+            <h3>3. Data Minimization</h3>
+            <ul>
+                <li><strong>Limited Collection:</strong> Only collect data necessary for Extension functionality</li>
+                <li><strong>Purpose Limitation:</strong> Data used only for stated purposes</li>
+                <li><strong>Regular Cleanup:</strong> Automatic deletion of unnecessary data</li>
             </ul>
         </section>
 
         <section class="policy-section">
-            <h2>Your Rights</h2>
-            <p>You have the right to:</p>
+            <h2>Data Retention and Deletion</h2>
+            
+            <h3>1. Retention Periods</h3>
             <ul>
-                <li>Use our service without creating an account</li>
-                <li>Delete all locally stored data at any time</li>
-                <li>Opt-out of anonymous usage statistics</li>
+                <li><strong>Email Content:</strong> Never permanently stored - processed temporarily on Google Cloud for deal extraction only</li>
+                <li><strong>Deal Information:</strong> Extracted deal data stored and managed according to your preferences</li>
+                <li><strong>User Accounts:</strong> Maintained while your account is active</li>
+                <li><strong>Analytics:</strong> Anonymized usage data after 12 months</li>
+            </ul>
+
+            <h3>2. Your Control Over Data</h3>
+            <ul>
+                <li><strong>Account Deletion:</strong> Request complete account deletion anytime</li>
+                <li><strong>Local Data:</strong> Clear by uninstalling the Extension</li>
+                <li><strong>Gmail Access:</strong> Revoke through Google account settings anytime</li>
+                <li><strong>Data Export:</strong> Request a copy of your data</li>
             </ul>
         </section>
 
         <section class="policy-section">
-            <h2>Contact Us</h2>
-            <p>If you have any questions about our privacy practices, please contact us at:</p>
-            <p><a href="mailto:privacy@findmydeals.com">privacy@findmydeals.com</a></p>
+            <h2>Your Rights and Choices</h2>
+            
+            <h3>1. Access and Control</h3>
+            <ul>
+                <li><strong>View Your Data:</strong> Access stored deals and account information</li>
+                <li><strong>Data Export:</strong> Download your data anytime</li>
+                <li><strong>Corrections:</strong> Update or correct your information</li>
+                <li><strong>Deletion:</strong> Delete your account and data</li>
+            </ul>
+
+            <h3>2. Privacy Controls</h3>
+            <ul>
+                <li><strong>Gmail Access:</strong> Revoke access through Google account settings</li>
+                <li><strong>Email Notifications:</strong> Disable in Extension settings</li>
+                <li><strong>Deal Alerts:</strong> Control popup notifications</li>
+                <li><strong>Location Services:</strong> Disable location tracking</li>
+            </ul>
+
+            <h3>3. Opt-Out Options</h3>
+            <ul>
+                <li><strong>Marketing:</strong> Unsubscribe from emails anytime</li>
+                <li><strong>Data Processing:</strong> Uninstall Extension to stop all data collection</li>
+                <li><strong>Analytics:</strong> Disable usage tracking in settings</li>
+            </ul>
+        </section>
+
+        <section class="policy-section">
+            <h2>Chrome Web Store Compliance</h2>
+            
+            <h3>1. Limited Use Policy Compliance</h3>
+            <p>In accordance with Google's Limited Use Policy:</p>
+            <ul>
+                <li><strong>Single Purpose:</strong> Gmail data used solely for deal discovery and processed temporarily only</li>
+                <li><strong>User Benefit:</strong> All features directly benefit users</li>
+                <li><strong>Temporary Processing:</strong> Email content processed on Google Cloud but never permanently stored</li>
+                <li><strong>No Advertising:</strong> We don't use your data for ads</li>
+                <li><strong>No Resale:</strong> We don't sell personal data</li>
+                <li><strong>Transparent:</strong> All functionality is user-facing and clearly described</li>
+            </ul>
+
+            <h3>2. Data Transfer Restrictions</h3>
+            <p>We only transfer data for:</p>
+            <ul>
+                <li>Essential Extension functionality</li>
+                <li>Security and fraud prevention</li>
+                <li>Legal compliance</li>
+                <li>Business continuity (mergers/acquisitions)</li>
+            </ul>
+
+            <h3>3. User Consent</h3>
+            <ul>
+                <li>Clear permission requests before accessing Gmail</li>
+                <li>Easy-to-understand privacy notices</li>
+                <li>Simple opt-out mechanisms</li>
+            </ul>
+        </section>
+
+        <section class="policy-section">
+            <h2>Regional Compliance</h2>
+            
+            <h3>1. International Data Transfers</h3>
+            <ul>
+                <li><strong>Location:</strong> Data may be processed in the United States and other countries</li>
+                <li><strong>Safeguards:</strong> Appropriate protections for international transfers</li>
+                <li><strong>Compliance:</strong> We follow applicable data protection laws</li>
+            </ul>
+
+            <h3>2. Specific Regional Rights</h3>
+            <ul>
+                <li><strong>GDPR (EU/UK):</strong> Right to access, rectify, erase, restrict, port, and object</li>
+                <li><strong>CCPA (California):</strong> Right to know, delete, opt-out, and non-discrimination</li>
+                <li><strong>Other Jurisdictions:</strong> Compliance with local privacy laws</li>
+            </ul>
+        </section>
+
+        <section class="policy-section">
+            <h2>Children's Privacy</h2>
+            <p>Our Extension is not intended for children under 13. We do not knowingly collect personal information from children under 13. If we become aware of such collection, we will delete the data immediately.</p>
+        </section>
+
+        <section class="policy-section">
+            <h2>Changes to This Policy</h2>
+            <p>We may update this Privacy Policy periodically. We will notify you of material changes by:</p>
+            <ul>
+                <li>Posting the updated policy with a new "Last Updated" date</li>
+                <li>Providing notice through the Extension interface</li>
+                <li>Sending email notification for significant changes</li>
+            </ul>
+        </section>
+
+        <section class="policy-section">
+            <h2>Contact Information</h2>
+            <p>If you have questions about this Privacy Policy or our data practices:</p>
+            <p><strong>Email:</strong> [support email]<br>
+            <strong>Website:</strong> [support website]<br>
+            <strong>Address:</strong> [company address if applicable]</p>
+            
+            <p>For technical support: [support email]<br>
+            For privacy concerns: [privacy email]</p>
+        </section>
+
+        <section class="policy-section">
+            <h2>Trust and Transparency</h2>
+            <p>We believe in earning your trust through transparency. This Privacy Policy is designed to be clear and understandable. If you have any questions or concerns, please don't hesitate to contact us.</p>
+            
+            <div class="highlight-box">
+                <p><strong>Your privacy matters to us.</strong> We're committed to protecting your personal information and giving you control over your data.</p>
+            </div>
+            
+            <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--border);">
+            <p><strong>Note:</strong> This Privacy Policy applies specifically to the Find My Deals Chrome Extension. For information about our website or other services, please refer to their respective privacy policies.</p>
         </section>
     </main>
 
@@ -284,8 +596,9 @@
                 <a href="terms.html">Terms of Service</a>
             </div>
             <div class="footer-section">
-                <h4>Contact</h4>
-                <a href="mailto:support@findmydeals.com">support@findmydeals.ai</a>
+                <h4>Support</h4>
+                <a href="support.html">Support Center</a>
+                <a href="mailto:support@findmydeals.ai">support@findmydeals.ai</a>
             </div>
         </div>
         <div class="footer-bottom">

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Center - FindMyDeals</title>
+    <style>
+        :root {
+            --brand-primary: #4384F3;
+            --brand-primary-light: #5A94F4;
+            --brand-primary-dark: #2D74F2;
+            --brand-secondary: #0f172a;
+            --brand-secondary-light: #334155;
+            --brand-accent: #FF6348;
+            --brand-yellow: #FFD580;
+            --brand-light: #f1f5f9;
+            --background: #ffffff;
+            --background-secondary: #f8fafc;
+            --background-tertiary: #f1f5f9;
+            --header-bg: #ffffff;
+            --header-border: #e2e8f0;
+            --header-accent: #f1f5f9;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --border-light: #f1f5f9;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Century Gothic', Avenir, 'Trebuchet MS', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--background);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.75rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-container img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--brand-accent);
+            text-decoration: none;
+        }
+
+        nav a {
+            margin-left: 1.5rem;
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--brand-primary);
+        }
+
+        .support-content {
+            max-width: 1000px;
+            margin: 6rem auto 2rem;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .support-content h1 {
+            font-size: 3rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .support-intro {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+        }
+
+        .faq-section {
+            margin-bottom: 3rem;
+        }
+
+        .faq-section h2 {
+            color: var(--brand-primary);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .faq-item {
+            background: var(--background-secondary);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--brand-primary);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .faq-answer ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .faq-answer li {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-section {
+            background: var(--brand-light);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .contact-section h2 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .contact-section p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-email {
+            display: inline-block;
+            background: var(--brand-primary);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .contact-email:hover {
+            background: var(--brand-primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .quick-link-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .quick-link-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .quick-link-card h3 {
+            color: var(--brand-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .quick-link-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .quick-link-card a {
+            color: var(--brand-primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .quick-link-card a:hover {
+            color: var(--brand-primary-dark);
+        }
+
+        footer {
+            background: var(--text-primary);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 3rem 2rem;
+            text-align: left;
+        }
+
+        .footer-section h4 {
+            color: var(--brand-yellow);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            display: block;
+            color: var(--white);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--brand-accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .support-content {
+                margin: 5rem 1rem 2rem;
+                padding: 1.5rem;
+            }
+
+            .support-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="voucher.png" alt="FindMyDeals Logo" width="48" height="48">
+                <a href="index.html" class="logo-text">FindMyDeals</a>
+            </div>
+            <nav>
+                <a href="index.html#features">Features</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#testimonials">Testimonials</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="support-content">
+        <h1>Support Center</h1>
+        <p class="support-intro">
+            Get help with FindMyDeals and make the most of your deal discovery experience. 
+            Find answers to common questions or reach out to our support team.
+        </p>
+
+        <div class="quick-links">
+            <div class="quick-link-card">
+                <h3>🚀 Getting Started</h3>
+                <p>New to FindMyDeals? Learn how to install and set up the extension.</p>
+                <a href="#installation">View Installation Guide</a>
+            </div>
+            <div class="quick-link-card">
+                <h3>🔒 Privacy & Security</h3>
+                <p>Learn about how we protect your data and maintain your privacy.</p>
+                <a href="privacy.html">Read Privacy Policy</a>
+            </div>
+            <div class="quick-link-card">
+                <h3>💡 Troubleshooting</h3>
+                <p>Having issues? Find solutions to common problems here.</p>
+                <a href="#troubleshooting">Get Help</a>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item" id="installation">
+                <div class="faq-question">How do I install FindMyDeals?</div>
+                <div class="faq-answer">
+                    <p>Installing FindMyDeals is quick and easy:</p>
+                    <ul>
+                        <li>Visit the Chrome Web Store (link coming soon)</li>
+                        <li>Click "Add to Chrome"</li>
+                        <li>Confirm the installation when prompted</li>
+                        <li>The extension will appear in your Chrome toolbar</li>
+                        <li>Click on the extension icon to get started</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How does FindMyDeals work?</div>
+                <div class="faq-answer">
+                    <p>FindMyDeals uses advanced AI to scan your Gmail promotional emails and extract deals, discounts, and vouchers. Here's how it works:</p>
+                    <ul>
+                        <li>You grant permission to scan your Gmail promotional folder</li>
+                        <li>Our secure API processes your emails to identify deals</li>
+                        <li>Extracted deals are stored locally on your device using IndexedDB</li>
+                        <li>You can access all your deals through the extension popup or Gmail integration</li>
+                        <li>Your email content is never stored on our servers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is my data safe and private?</div>
+                <div class="faq-answer">
+                    <p>Absolutely! Privacy is our top priority:</p>
+                    <ul>
+                        <li>We never store your emails on our servers</li>
+                        <li>Email content is processed securely through our API and immediately discarded</li>
+                        <li>Only extracted deal information is stored locally on your device</li>
+                        <li>We don't sell, share, or monetize your personal data</li>
+                        <li>All data processing happens with end-to-end encryption</li>
+                    </ul>
+                    <p>For complete details, please read our <a href="privacy.html" style="color: var(--brand-primary);">Privacy Policy</a>.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What's included in the free trial?</div>
+                <div class="faq-answer">
+                    <p>Our free trial gives you a taste of FindMyDeals' power:</p>
+                    <ul>
+                        <li>2 free email scans to discover deals</li>
+                        <li>Full AI deal extraction experience</li>
+                        <li>See exactly how many deals are hiding in your inbox</li>
+                        <li>No credit card required</li>
+                        <li>No time limit on using your discovered deals</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How much does unlimited access cost?</div>
+                <div class="faq-answer">
+                    <p>Unlimited access to FindMyDeals costs just $19.99 as a one-time payment. This includes:</p>
+                    <ul>
+                        <li>Unlimited email scanning</li>
+                        <li>Access to all deals from your email history</li>
+                        <li>Automatic daily deal discovery</li>
+                        <li>Lifetime access to your deals</li>
+                        <li>Local storage for complete privacy</li>
+                        <li>No recurring subscription fees</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item" id="troubleshooting">
+                <div class="faq-question">The extension isn't finding my deals. What should I do?</div>
+                <div class="faq-answer">
+                    <p>If FindMyDeals isn't discovering deals, try these troubleshooting steps:</p>
+                    <ul>
+                        <li>Make sure you've granted Gmail permissions to the extension</li>
+                        <li>Check that you have promotional emails in your Gmail account</li>
+                        <li>Ensure you're connected to the internet during scanning</li>
+                        <li>Try refreshing your Gmail page and restarting the extension</li>
+                        <li>Clear your browser cache and cookies, then reinstall the extension</li>
+                    </ul>
+                    <p>If problems persist, please contact our support team.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I use FindMyDeals on mobile devices?</div>
+                <div class="faq-answer">
+                    <p>Currently, FindMyDeals is available as a Chrome extension for desktop and laptop computers. We're working on mobile compatibility and will announce updates when available. In the meantime, you can access your discovered deals through Gmail on any device where they're stored locally.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I update or uninstall FindMyDeals?</div>
+                <div class="faq-answer">
+                    <p><strong>To update:</strong> Chrome extensions update automatically. You can manually check for updates in Chrome Settings > Extensions.</p>
+                    <p><strong>To uninstall:</strong></p>
+                    <ul>
+                        <li>Right-click the FindMyDeals icon in your Chrome toolbar</li>
+                        <li>Select "Remove from Chrome"</li>
+                        <li>Confirm the removal</li>
+                        <li>Your locally stored deals will be removed with the extension</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What types of deals can FindMyDeals discover?</div>
+                <div class="faq-answer">
+                    <p>FindMyDeals can identify various types of savings in your emails:</p>
+                    <ul>
+                        <li>Discount codes and coupon codes</li>
+                        <li>Percentage-off deals (10% off, 25% off, etc.)</li>
+                        <li>Dollar-amount discounts ($5 off, $20 off, etc.)</li>
+                        <li>Free shipping offers</li>
+                        <li>Gift cards and store credits</li>
+                        <li>Buy-one-get-one (BOGO) deals</li>
+                        <li>Limited-time sales and flash deals</li>
+                        <li>Cashback offers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h2>Still Need Help?</h2>
+            <p>Can't find the answer you're looking for? Our support team is here to help you get the most out of FindMyDeals.</p>
+            <a href="mailto:support@findmydeals.ai" class="contact-email">Contact Support</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>FindMyDeals</h4>
+                <p>Making savings simple, secure, and smart.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <a href="support.html">Support Center</a>
+                <a href="mailto:support@findmydeals.ai">support@findmydeals.ai</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 FindMyDeals - Your Privacy-First Deal Discovery Tool</p>
+        </div>
+    </footer>
+</body>
+</html>
